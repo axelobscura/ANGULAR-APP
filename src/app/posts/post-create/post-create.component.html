@@ -1,4 +1,11 @@
-<textarea rows="6" [value]="newPost"></textarea>
+<!--
+  One way data binding
+  <textarea rows="6" [value]="newPost" #postInput></textarea>
+-->
+<!--
+Two way data binding
+-->
+<textarea rows="6" [(ngModel)]="enteredValue"></textarea>
 <hr>
 <button (click)="onAddPost()">Save Post</button>
 <p>{{newPost}}</p>
