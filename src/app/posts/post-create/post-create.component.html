@@ -15,6 +15,7 @@ Two way data binding
           ngModel
           required
           minlength="3"
+          placeholder="Post Title"
           #title="ngModel">
           <mat-error *ngIf="title.invalid">Please enter a post title.</mat-error>
       </mat-form-field>
@@ -25,6 +26,7 @@ Two way data binding
           name="content"
           ngModel
           required
+          placeholder="Post Content"
           #content="ngModel"></textarea>
           <mat-error *ngIf="content.invalid">Please enter the post content.</mat-error>
       </mat-form-field>
