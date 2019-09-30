@@ -9,7 +9,6 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "start:server": "nodemon server.js"
-    //npm run start:server
   },
   "private": true,
   "dependencies": {
