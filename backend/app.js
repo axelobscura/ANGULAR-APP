@@ -52,6 +52,16 @@ app.get('/api/posts', (req, res, next) => {
   });
 });
 
+app.get('/api/posts/:id', (req, res, next) => {
+  Post.findById(req.params.id).then(post => {
+    if(post){
+      res.status(200).json(post);
+    } else {
+      res.status(400).json({ message: 'Post Not Found!!!' });
+    }
+  })
+});
+
 app.put('/api/posts/:id', (req, res, next) => {
   const post = new Post({
     _id: req.body.id,
