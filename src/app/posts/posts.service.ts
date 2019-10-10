@@ -18,7 +18,7 @@ export class PostsService {
       .get<{id: string, message: string, posts: any}>(
         'http://localhost:3000/api/posts'
       )
-      .pipe(map((postData) => {
+      .pipe(map(postData => {
         return postData.posts.map(post => {
           return {
             title: post.title,
@@ -48,11 +48,11 @@ export class PostsService {
     postData.append('content', content);
     postData.append('image', image, title);
     this.http
-      .post<{message: string, postId: string}>(
+      .post<{message: string, post: Post}>(
         'http://localhost:3000/api/posts',
         postData
       )
-      .subscribe((responseData) => {
+      .subscribe(responseData => {
         const post: Post = {
           id: responseData.post.id,
           title: title,
