@@ -1,3 +1,12 @@
+mat-form-field,
+textarea {
+  width: 100%;
+}
+
+mat-spinner {
+  margin: auto;
+}
+
 ul {
   list-style: none;
   margin: 0;
@@ -7,6 +16,10 @@ ul {
 a {
   text-decoration: none;
   color: #fff;
+}
+
+ul {
+  display: flex;
 }
 
 .spacer {
