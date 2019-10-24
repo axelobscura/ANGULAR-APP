@@ -4,10 +4,11 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
 const postRoutes = require('./routes/posts');
+const userRoutes = require('./routes/user');
 
 const app = express();
 
-mongoose.connect('mongodb+srv://angular:o90oJZo0jedGV0Xh@cluster0-muwar.mongodb.net/node-angular?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect('mongodb+srv://angular:o90oJZo0jedGV0Xh@cluster0-muwar.mongodb.net/node-angular', { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     console.log('Connected to database...')
   })
@@ -33,5 +34,6 @@ app.use((req, res, next) => {
 });
 
 app.use("/api/posts", postRoutes);
+app.use("/api/user", userRoutes);
 
 module.exports = app;
