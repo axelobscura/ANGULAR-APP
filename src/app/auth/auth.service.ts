@@ -14,7 +14,7 @@ export class AuthService {
   }
 
   createUser(email: string, password: string) {
-    const authdata: AuthData = {email, password};
+    const authdata: AuthData = {email: email, password: password};
     this.http.post('http://localhost:3000/api/user/signup', authdata)
       .subscribe(response => {
         console.log(response);
@@ -22,7 +22,7 @@ export class AuthService {
   }
 
   login(email: string, password: string) {
-    const authdata: AuthData = {email, password};
+    const authdata: AuthData = {email: email, password: password};
     this.http.post<{token: string}>('http://localhost:3000/api/user/login', authdata)
       .subscribe(response => {
         console.log(response);
