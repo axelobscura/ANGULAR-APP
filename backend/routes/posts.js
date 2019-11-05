@@ -44,7 +44,8 @@ router.post(
         id: createdPost._id,
         title: createdPost.title,
         content: createdPost.content,
-        imagePath: createdPost.imagePath
+        imagePath: createdPost.imagePath,
+        creator: req.userData.userId
       }
     });
   });
@@ -97,7 +98,8 @@ router.put(
     _id: req.body.id,
     title: req.body.title,
     content: req.body.content,
-    imagePath: imagePath
+    imagePath: imagePath,
+    creator: req.userData.userId
   });
   Post.updateOne({_id: req.params.id, creator: req.userData.userId}, post).then(result => {
     if(result.nModified > 0){
